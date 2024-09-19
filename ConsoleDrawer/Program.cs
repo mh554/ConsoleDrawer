@@ -58,7 +58,7 @@ class Program
 
     static void PlaceMarker()
     {
-        Console.Write("█"); ;
+        Console.Write("█");
     }
 
     static void DeleteMarker()
