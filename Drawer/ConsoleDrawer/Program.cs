@@ -1,4 +1,4 @@
-﻿namespace ConsoleDrawer
+namespace ConsoleDrawer
 {
     internal class Program
     {
@@ -161,7 +161,7 @@
 
             using (StreamReader reader = new StreamReader(filePath))
             {
-                string line;
+                string? line;
                 while ((line = reader.ReadLine()) != null)
                 {
                     var parts = line.Split(',');
