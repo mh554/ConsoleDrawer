@@ -1,0 +1,15 @@
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\bin\Debug\net8.0\ConsoleDrawer.exe
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\bin\Debug\net8.0\ConsoleDrawer.deps.json
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\bin\Debug\net8.0\ConsoleDrawer.runtimeconfig.json
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\bin\Debug\net8.0\ConsoleDrawer.dll
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\bin\Debug\net8.0\ConsoleDrawer.pdb
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.AssemblyInfoInputs.cache
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.AssemblyInfo.cs
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.csproj.CoreCompileInputs.cache
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.sourcelink.json
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.dll
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\refint\ConsoleDrawer.dll
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.pdb
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ConsoleDrawer.genruntimeconfig.cache
+C:\Users\barta.marko\Source\Repos\ConsoleDrawer\ConsoleDrawer\obj\Debug\net8.0\ref\ConsoleDrawer.dll
