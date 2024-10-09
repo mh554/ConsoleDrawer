@@ -53,6 +53,7 @@ class Program
                     LoadDrawing("drawing.txt");
                     break;
                 case ConsoleKey.Escape:
+                    LoadMenu();
                     break;
                 default:
                     ChangeColor(key);
@@ -175,21 +176,18 @@ class Program
         switch (key)
         {
             case ConsoleKey.L:
+                LoadDrawing("drawing.txt");
                 break;
             case ConsoleKey.S:
+                SaveDrawing("drawing.txt");
                 break;
-            case ConsoleKey.C: 
+            case ConsoleKey.C:
+                Console.Clear();
                 break;
             default:
                 break;
         }
-
-        if (true)
-        {
-            
-        }
-
-
+        Thread.Sleep(100);
 
     }
 }

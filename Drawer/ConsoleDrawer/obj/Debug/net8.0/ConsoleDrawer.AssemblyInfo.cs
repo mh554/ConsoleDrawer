@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsoleDrawer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6ac4f29a4fd7139604de9360bb5899568ccdce1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsoleDrawer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsoleDrawer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
