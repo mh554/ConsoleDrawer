@@ -186,6 +186,9 @@ class Program
                 drawing.Clear();
                 running = true;
                 break;
+            case ConsoleKey.Escape:
+                running = true;
+                break;
             default:
                 break;
         }
