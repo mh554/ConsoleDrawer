@@ -1,4 +1,4 @@
-﻿namespace ConsoleDrawer;
+namespace ConsoleDrawer;
 using System;
 
 class Program
@@ -6,7 +6,7 @@ class Program
     static int cursorX = 0;
     static int cursorY = 0;
 
-    static bool running = true;
+    static bool running = false;
 
     static ConsoleColor currentColor = ConsoleColor.White;
     static readonly Dictionary<(int, int), (char, ConsoleColor)> drawing = new();
@@ -15,7 +15,6 @@ class Program
     {
         Console.Clear();
         Console.CursorVisible = true;
-        LoadMenu();
 
         while (!running)
         {
@@ -46,13 +45,8 @@ class Program
                 case ConsoleKey.Backspace:
                     DeleteMarker();
                     break;
-                case ConsoleKey.S:
-                    SaveDrawing("drawing.txt");
-                    break;
-                case ConsoleKey.L:
-                    LoadDrawing("drawing.txt");
-                    break;
                 case ConsoleKey.Escape:
+                    running = false;
                     LoadMenu();
                     break;
                 default:
@@ -161,7 +155,7 @@ class Program
 
     static void LoadMenu()
     {
-        if (running == true)
+        if (running == false)
         {
             Console.Clear();
             Console.WriteLine("Drawer thing");
@@ -169,20 +163,28 @@ class Program
             Console.WriteLine("Press S to save to a file");
             Console.WriteLine("Press C to start drawing");
         }
-        running = false;
 
         var key = Console.ReadKey(true).Key;
 
         switch (key)
         {
             case ConsoleKey.L:
+                Console.Clear();
+                drawing.Clear();
                 LoadDrawing("drawing.txt");
+                running = true;
                 break;
             case ConsoleKey.S:
                 SaveDrawing("drawing.txt");
+                Console.Clear();
+                drawing.Clear();
+                LoadDrawing("drawing.txt");
+                running = true;
                 break;
             case ConsoleKey.C:
                 Console.Clear();
+                drawing.Clear();
+                running = true;
                 break;
             default:
                 break;
