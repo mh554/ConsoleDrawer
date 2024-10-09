@@ -186,6 +186,13 @@ class Program
                 drawing.Clear();
                 running = true;
                 break;
+            case ConsoleKey.Escape:
+                SaveDrawing("temp.txt");
+                Console.Clear();
+                drawing.Clear();
+                LoadDrawing("temp.txt");
+                running = true;
+                break;
             default:
                 break;
         }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\barta.marko\\Source\\Repos\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
+      "projectUniqueName": "C:\\Users\\barta.marko\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
       "projectName": "ConsoleDrawer",
-      "projectPath": "C:\\Users\\barta.marko\\Source\\Repos\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
+      "projectPath": "C:\\Users\\barta.marko\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
       "packagesPath": "C:\\Users\\barta.marko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\barta.marko\\Source\\Repos\\ConsoleDrawer\\ConsoleDrawer\\obj\\",
+      "outputPath": "C:\\Users\\barta.marko\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\barta.marko\\AppData\\Roaming\\NuGet\\NuGet.Config",
