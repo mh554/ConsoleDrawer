@@ -6,15 +6,14 @@ class Program
     static int cursorX = 0;
     static int cursorY = 0;
 
-    static bool running = false;
+    static bool running = true;
 
     static ConsoleColor currentColor = ConsoleColor.White;
     static readonly Dictionary<(int, int), (char, ConsoleColor)> drawing = new();
 
     static void Main()
     {
-        Console.Clear();
-        Console.CursorVisible = true;
+        LoadMenu();
 
         while (!running)
         {
@@ -46,7 +45,7 @@ class Program
                     DeleteMarker();
                     break;
                 case ConsoleKey.Escape:
-                    running = false;
+                    Console.Clear();
                     LoadMenu();
                     break;
                 default:
@@ -127,7 +126,13 @@ class Program
 
     static void LoadDrawing(string filePath)
     {
-        if (!File.Exists(filePath)) return;
+        if (!File.Exists(filePath))
+        {
+            Console.SetCursorPosition(0, 10);
+            Console.WriteLine($"File '{filePath}' does not exist.");
+            Thread.Sleep(2000); 
+            return;
+        }
 
         drawing.Clear();
         Console.Clear();
@@ -149,48 +154,164 @@ class Program
                 Console.Write(character);
             }
         }
-        Console.SetCursorPosition(cursorX, cursorY);
+
         Console.ForegroundColor = currentColor;
+        Console.CursorVisible = true;
+    }
+    static void DeleteFile(string filePath)
+    {
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+            Console.WriteLine($"File '{filePath}' deleted successfully.");
+        }
+        else
+        {
+            Console.WriteLine($"File '{filePath}' does not exist.");
+        }
+    }
+
+    static void LoadMenuText()
+    {
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.CursorVisible = false;
+        ClearLine(1);
+        ClearLine(2);
+        ClearLine(3);
+        ClearLine(4);
+        Console.SetCursorPosition(0, 0);
+        Console.WriteLine("Drawer thing");
+        Console.WriteLine("Use arrow keys to navigate");
+        Console.WriteLine("Press Enter to select an option");
+        Console.WriteLine("Press Escape to go back to drawing");
+        Console.SetCursorPosition(0, 5);
+        for (int i = 0; i < menuOptions.Length; i++)
+        {
+            if (i == 0)
+            {
+                Console.Write(">");
+            }
+            else
+            {
+                Console.Write(" ");
+            }
+            Console.WriteLine(menuOptions[i]);
+        }
     }
 
     static void LoadMenu()
     {
-        if (running == false)
+        if (running)
         {
-            Console.Clear();
-            Console.WriteLine("Drawer thing");
-            Console.WriteLine("Press L to load a file");
-            Console.WriteLine("Press S to save to a file");
-            Console.WriteLine("Press C to start drawing");
+            LoadMenuText();
         }
+        running = false;
+        menuSelection = 0;
 
-        var key = Console.ReadKey(true).Key;
-
-        switch (key)
+        while (!running)
         {
-            case ConsoleKey.L:
-                LoadDrawing("drawing.txt");
+            var key = Console.ReadKey(true).Key;
+
+            switch (key)
+            {
+                case ConsoleKey.UpArrow:
+                    MoveMenuSelection(-1);
+                    break;
+                case ConsoleKey.DownArrow:
+                    MoveMenuSelection(1);
+                    break;
+                case ConsoleKey.Enter:
+                    SelectMenuOption();
+                    break;
+                case ConsoleKey.Escape:
+                    SaveDrawing("temp.txt");
+                    LoadDrawing("temp.txt");
+                    running = true;
+                    Console.SetCursorPosition(0, 0);
+                    break;
+                default:
+                    break;
+            }
+            Thread.Sleep(10);
+        }
+    }
+
+    static void MoveMenuSelection(int direction)
+    {
+        menuSelection += direction;
+        if (menuSelection < 0)
+            menuSelection = menuOptions.Length - 1;
+        else if (menuSelection >= menuOptions.Length)
+            menuSelection = 0;
+
+        ClearLine(5);
+        ClearLine(6);
+        ClearLine(7);
+
+        for (int i = 0; i < menuOptions.Length; i++)
+        {
+            Console.SetCursorPosition(0, 5 + i);
+            if (i == menuSelection)
+            {
+                Console.Write(">");
+            }
+            else
+            {
+                Console.Write(" ");
+            }
+            Console.WriteLine(menuOptions[i]);
+        }
+    }
+
+    static void SelectMenuOption()
+    {
+        switch (menuSelection)
+        {
+            case 0:
+                Console.SetCursorPosition(0, 10);
+                Console.WriteLine("Enter the file name to load:");
+                string loadFileName = Console.ReadLine();
+                LoadDrawing(loadFileName + ".txt");
+                Console.SetCursorPosition(0, 0);
                 running = true;
                 break;
-            case ConsoleKey.S:
-                SaveDrawing("drawing.txt");
-                LoadDrawing("drawing.txt");
+            case 1:
+                Console.SetCursorPosition(0, 10);
+                Console.WriteLine("Enter the file name to save:");
+                string saveFileName = Console.ReadLine();
+                SaveDrawing(saveFileName + ".txt");
+                LoadDrawing(saveFileName + ".txt");
                 running = true;
                 break;
-            case ConsoleKey.C:
+            case 2:
+                Console.SetCursorPosition(0, 10);
+                Console.WriteLine("Enter the file name to delete:");
+                string deleteFileName = Console.ReadLine();
+                DeleteFile(deleteFileName + ".txt");
+                break;
+            case 3:
                 Console.Clear();
                 drawing.Clear();
+                Console.CursorVisible = true;
                 running = true;
                 break;
-            case ConsoleKey.Escape:
-                SaveDrawing("temp.txt");
-                LoadDrawing("temp.txt");
-                running = true;
+            case 4:
+                Environment.Exit(0);
                 break;
             default:
                 break;
         }
-        Thread.Sleep(100);
+    }
 
+
+
+    static int menuSelection = 0;
+    static readonly string[] menuOptions = { "Load a file", "Save to a file", "Delete a file","Start drawing", "Quit"};
+    static void ClearLine(int line)
+    {
+        int currentLineCursor = Console.CursorTop;
+        Console.SetCursorPosition(0, line);
+        Console.Write(new string(' ', Console.WindowWidth));
+        Console.SetCursorPosition(0, currentLineCursor);
     }
 }

@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\barta.marko\\.nuget\\packages\\": {}
+    "C:\\Users\\Márkó\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\barta.marko\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
+      "projectUniqueName": "C:\\Users\\Márkó\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
       "projectName": "ConsoleDrawer",
-      "projectPath": "C:\\Users\\barta.marko\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
-      "packagesPath": "C:\\Users\\barta.marko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\barta.marko\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\obj\\",
+      "projectPath": "C:\\Users\\Márkó\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\ConsoleDrawer.csproj",
+      "packagesPath": "C:\\Users\\Márkó\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Márkó\\Source\\Repos\\mh554\\ConsoleDrawer\\ConsoleDrawer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\barta.marko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Márkó\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -61,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
