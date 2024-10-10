@@ -169,15 +169,11 @@ class Program
         switch (key)
         {
             case ConsoleKey.L:
-                Console.Clear();
-                drawing.Clear();
                 LoadDrawing("drawing.txt");
                 running = true;
                 break;
             case ConsoleKey.S:
                 SaveDrawing("drawing.txt");
-                Console.Clear();
-                drawing.Clear();
                 LoadDrawing("drawing.txt");
                 running = true;
                 break;
@@ -188,8 +184,6 @@ class Program
                 break;
             case ConsoleKey.Escape:
                 SaveDrawing("temp.txt");
-                Console.Clear();
-                drawing.Clear();
                 LoadDrawing("temp.txt");
                 running = true;
                 break;
